@@ -1,0 +1,41 @@
+C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\Oxpecker\BrowseInfo\TouchGFX\generated\texts\Texts.pbi: \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\TouchGFX\generated\texts\src\Texts.cpp \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdarg.h \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\TouchGFX\generated\texts\include\texts\TypedTextDatabase.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\hal\Types.hpp \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\assert.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Full.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\hal\Config.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\TypedText.hpp \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\cpp\cassert \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\Font.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\Unicode.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\Texts.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\TextProvider.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\hal\HAL.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\Bitmap.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\Drawable.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\Application.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\UIEventListener.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\events\ClickEvent.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\Event.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\events\DragEvent.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\events\GestureEvent.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\transitions\Transition.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\lcd\LCD.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\TextureMapTypes.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\Utils.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\Callback.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\hal\BlitOp.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\hal\DMA.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\hal\Atomic.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\hal\FrameBufferAllocator.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\touchgfx\hal\Gestures.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\platform\core\MCUInstrumentation.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\platform\driver\button\ButtonController.hpp \
+  C:\TouchGFXProjects\KraftHeinz_DS3600\EWARM\..\Middlewares\ST\TouchGFX\framework\include\platform\driver\touch\TouchController.hpp

@@ -1,0 +1,46 @@
+{
+  "ConfigurationApp": [
+    "SnCfgAppSubMenuView",
+    "SnCfgBoolParamView",
+    "SnCfgCharParamView",
+    "SnCfgMenuView",
+    "SnCfgNumericParamView",
+    "SnCfgStringParamView",
+    "SnFnKeyAssignView"
+  ],
+  "DefaultApp": [
+    "SnBarcodeProgressView"
+  ],
+  "ImageViewerApp": [
+    "SnImageViewView"
+  ],
+  "MinimalApp": [
+    "SnMinimalView"
+  ],
+  "OutInMatchApp": [
+    "SnOutInMatchView"
+  ],
+  "ScanAndEntQty_DApp": [
+    "SnScanAndEntQty_DView"
+  ],
+  "ScanAndEnterLocApp": [
+    "SnScanAndEntLocView"
+  ],
+  "ScanAndEnterQtyApp": [
+    "SnScanAndEntQtyView"
+  ],
+  "ScanInventoryApp": [
+    "SnScanInventoryView"
+  ],
+  "SettingLeaf": [
+    "SnCfgBoolParamView",
+    "SnCfgCharParamView",
+    "SnCfgNumericParamView",
+    "SnCfgStringParamView",
+    "SnFnKeyAssignView"
+  ],
+  "ZebraPlatformScreen": [
+    "SnHomeMenuView",
+    "SnSplashView"
+  ]
+}
