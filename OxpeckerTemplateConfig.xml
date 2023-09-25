@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OxPackConfig>
+    <Paths>
+        <PathDef>
+            <Name>productcodeHexFolderPath</Name>
+            <Value>"Release\hex"</Value>
+        </PathDef>
+        <PathDef>
+            <Name>combinedHexFolderPath</Name>
+            <Value>"Release\hex"</Value>
+        </PathDef>
+        <PathDef>
+            <Name>projectBinFile</Name>
+            <Value>"Release\bin\project.bin"</Value>
+        </PathDef>
+    </Paths>
+    <Versions>
+        <VersionDef>
+            <!-- Version for productCode                                     -->
+            <!-- Sample version is PAAFIS00-001-N43M0.hex                    -->
+            <Name>productcodeVersion</Name>
+            <ReleaseType>P</ReleaseType>
+            <MajorVersion>00</MajorVersion>
+            <MinorVersion>001</MinorVersion>
+            <ReleaseLabel>N</ReleaseLabel>
+            <Version>99</Version>
+            <SuffixLabel>M</SuffixLabel>
+            <SuffixVersion>0</SuffixVersion>
+        </VersionDef>
+        <VersionDef>
+            <!-- Version for combinedCode                                    -->
+            <!-- Sample version is CAAFIS00-001-N43M0.hex                    -->
+            <Name>combinedcodeVersion</Name>
+            <ReleaseType>P</ReleaseType>
+            <MajorVersion>00</MajorVersion>
+            <MinorVersion>001</MinorVersion>
+            <ReleaseLabel>N</ReleaseLabel>
+            <Version>99</Version>
+            <SuffixLabel>M</SuffixLabel>
+            <SuffixVersion>0</SuffixVersion>
+        </VersionDef>
+    </Versions>
+</OxPackConfig>
