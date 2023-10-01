@@ -7,11 +7,14 @@
 #include <iostream>
 #include <ctime>
 
+
+#define LAUNCH_SCREEN 8
+
 REGISTER_APPLICATION(
     KHMainScreenView,
     "Kraft Heinz",
     TRANSITION_CALLBACK(gotoKHMainScreenScreenNoTransition),
-    255
+    LAUNCH_SCREEN - 1
 )
 
 KHMainScreenView::KHMainScreenView()
@@ -39,12 +42,13 @@ KHMainScreenView::KHMainScreenView()
       i++;
     }
     ConfigParam param_radio = ConfigParam::GetParameters()[radioIdx];    
+
 }
 
 void KHMainScreenView::setupScreen()
 {
     KHMainScreenViewBase::setupScreen();
-
+     
     // get last barcode. It is stored as F1 in function keys!
     uint8_t rParamValue = 0;
     char sParamValue[20] = {0};
@@ -172,6 +176,8 @@ void KHMainScreenView::hideAll(void)
 void KHMainScreenView::handleKeyEvent(uint8_t key)
 {
     uint8_t rValue = 0;
+    if (cueBcTimer < CUE_TIMEOUT) //ignore key events during timer
+      return;
     presenter->keyPressed(key);
     if (step == 0)
     {
@@ -196,7 +202,7 @@ void KHMainScreenView::handleKeyEvent(uint8_t key)
             return;
         }
     }
-    if ((step == 1) && (key == KEYCODE_RIGHT))
+    if ((step == 1) && ( (key == KEYCODE_ENTER) ||(key == KEYCODE_RIGHT)))
     {
         step = 2;
         hideAll();
@@ -309,7 +315,6 @@ void KHMainScreenView::handleKeyEvent(uint8_t key)
             textRightMenu.invalidate();
             return;
         }
-        return;
     }
     if (step == 7) // menu
     {
@@ -520,7 +525,7 @@ void KHMainScreenView::handleKeyEvent(uint8_t key)
             textRightOk.setVisible(true);
             textRightOk.invalidate();
             break;
-        case 6: // step 6 - initials
+        case 6: // step 6 - initials  
             if (locationField_Loc1.getText() == NULL)
             {
                 userinitials = "";
@@ -624,37 +629,42 @@ void KHMainScreenView::BarcodeComeIn(char* BarcodeData)
     time_t rawtime;
     struct tm* timeinfo;
     char buffer[80];
-    time(&rawtime);
-    timeinfo = localtime(&rawtime);
-    strftime(buffer, sizeof(buffer), "%d-%m-%Y", timeinfo);
-    std::string datePart(buffer);
-    strftime(buffer, sizeof(buffer), "%H:%M:%S", timeinfo);
-    std::string timePart(buffer);
-
+    
+    if (cueBcTimer < CUE_TIMEOUT) //ignore key events during timer
+    {
+      presenter->clearBarcode();
+      return;
+    }
+    
     bc_r_ptr = (BarcodeRecord_t*)((void*)BarcodeData);
-    barcode.assign(NonPrintCharFilter_b(bc_r_ptr));
-    presenter->clearBarcode();
-
+    barcode.assign(BarcodeData);
+    //barcode.assign(NonPrintCharFilter_b(bc_r_ptr));
     switch (step)
     {
     case 1:
-        learnbarcode = BarcodeData;
-#ifndef _VS2022
-        barcodeLearn.setText(NonPrintCharFilter_b(bc_r_ptr));// is this right?
-        barcodeMatch.setText(NonPrintCharFilter_b(bc_r_ptr));// is this right?
-#else
+        learnbarcode = barcode;
+//#ifndef _VS2022
+//        barcodeLearn.setText(NonPrintCharFilter_b(bc_r_ptr));// is this right?
+//        barcodeMatch.setText(NonPrintCharFilter_b(bc_r_ptr));// is this right?
+//#else
         barcodeLearn.setText(BarcodeData);
         barcodeMatch.setText(BarcodeData);
-#endif
+//#endif
         barcodeLearn.invalidate();
         barcodeMatch.invalidate();
         barcodeVerify.setNextScan();
         break;
     case 2:
-        cueBcTimer = 0;
-        verifybarcode = BarcodeData;
-        verifydate = datePart;
-        verifytime = timePart;
+        verifybarcode = barcode;
+		/* removed - causes run time error */
+        //time(&rawtime);
+        //timeinfo = localtime(&rawtime);
+        //strftime(buffer, sizeof(buffer), "%d-%m-%Y", timeinfo);
+        //std::string datePart(buffer);
+        //strftime(buffer, sizeof(buffer), "%H:%M:%S", timeinfo);
+        //std::string timePart(buffer);        
+        verifydate = "01-01-1900";//datePart;
+        verifytime = "00:00:00";//timePart;
 #ifndef _VS2022
         barcodeVerify.setText(NonPrintCharFilter_b(bc_r_ptr));
 #else
@@ -662,8 +672,10 @@ void KHMainScreenView::BarcodeComeIn(char* BarcodeData)
 #endif      
         barcodeVerify.invalidate();
         //barcodeVerify.setNextScan();
+        cueBcTimer = 0; //display barcode for x seconds and trigger enter key
         break;
     }
+    presenter->clearBarcode();   
 }
 
 void KHMainScreenView::handleTickEvent()
@@ -695,23 +707,23 @@ void KHMainScreenView::handleTickEvent()
         if (cueBcTimer == CUE_TIMEOUT)
         {
             handleKeyEvent(KEYCODE_ENTER);
-            //ccSuccessCue.setVisible(false);
-            //ccSuccessCue.invalidate();
-            //acceptBarcode();
+    //        //ccSuccessCue.setVisible(false);
+    //        //ccSuccessCue.invalidate();
+    //        //acceptBarcode();
         }
     }
 
-    if (toastViewTimer < TOASTVIEW_TIMEOUT)
-    {
-        toastViewTimer++;
-        if (toastViewTimer == TOASTVIEW_TIMEOUT)    // toast view timeout
-        {
-            //ccToastBatchOn.setVisible(false);
-            //ccToastBatchOn.invalidate();
-            //ccToastExitList.setVisible(false);
-            //ccToastExitList.invalidate();
-        }
-    }
+    //if (toastViewTimer < TOASTVIEW_TIMEOUT)
+    //{
+    //    toastViewTimer++;
+    //    if (toastViewTimer == TOASTVIEW_TIMEOUT)    // toast view timeout
+    //    {
+    //        //ccToastBatchOn.setVisible(false);
+    //        //ccToastBatchOn.invalidate();
+    //        //ccToastExitList.setVisible(false);
+    //        //ccToastExitList.invalidate();
+    //    }
+    //}
 }
 
 void KHMainScreenView::afterTransition()
